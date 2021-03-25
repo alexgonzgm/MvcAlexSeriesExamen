@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "CambioSerie";
+    List<Personaje> personajes = ViewData["LP"] as List<Personaje>;
+    List<Serie> series = ViewData["LS"] as List<Serie>;
+}
+
+<h1>Cambio Serie</h1>
+
+<form method="post" class="card p-3">
+    <label>Personaje :</label>
+    <select name="idpersonaje" class="form-control">
+        @foreach (var item in personajes)
+        {
+            <option value="@item.IdPersonaje">@item.NombrePersonaje</option>
+        }
+    </select>
+    <br />
+    <label>Serie:</label>
+    <select name="idserie" class="form-control">
+        @foreach (var item in series)
+        {
+            <option value="@item.IdSerie">@item.NombreSerie</option>
+        }
+    </select>
+    <br />
+    <button class="btn btn-success">Guardar Cambios</button>
+</form>
+

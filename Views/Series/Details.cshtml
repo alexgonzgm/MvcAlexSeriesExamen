@@ -1,0 +1,50 @@
+﻿@model MvcAlexSeriesExamen.Models.Serie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Serie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdSerie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdSerie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreSerie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreSerie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Imagen" style="width:250px; height:250px;" />
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Puntuacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Puntuacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success" asp-action="GetPersonajesSerie" asp-controller="Personajes" asp-route-idserie="@Model.IdSerie">Ver Personajes</a>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

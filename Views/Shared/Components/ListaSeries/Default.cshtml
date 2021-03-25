@@ -1,0 +1,10 @@
+﻿
+@model List<Serie>
+
+<div class="dropdown-menu">
+    @foreach (var item in Model)
+    {
+        <a asp-action="Details" class="dropdown-item" asp-controller="Series" asp-route-idserie="@item.IdSerie">@item.NombreSerie</a>
+    }
+</div>
+
